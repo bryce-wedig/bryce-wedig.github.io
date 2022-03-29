@@ -19,7 +19,3 @@ Work experience
 ======
 * 2021-Present: Technical Consultant, Veeva Systems
 * 2019-2021: Associate Consultant, Veeva Systems
-  
-Teaching
-======
-*
