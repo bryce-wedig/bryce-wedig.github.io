@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-[Download my CV here](https://bryce-wedig.github.io/files/wedig_cv_spring_22.pdf)
+[Download my CV here](https://bryce-wedig.github.io/files/wedig_cv.pdf)
