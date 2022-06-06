@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Bryce Wedig"
   avatar           : "profile.jpg"
-  bio              : # "Your biography for the left-hand sidebar"
-  location         : "Asheville, NC, USA"
+  bio              : "PhD Student at Washington University in St. Louis" # "Your biography for the left-hand sidebar"
+  location         : "St. Louis, MO, USA"
   employer         :
   pubmed           :
   googlescholar    :
