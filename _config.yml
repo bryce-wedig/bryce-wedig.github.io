@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Bryce Wedig"
   avatar           : "profile.jpg"
-  bio              : "PhD student at Washington University in St. Louis" # "Your biography for the left-hand sidebar"
+  bio              : "PhD candidate at Washington University in St. Louis" # "Your biography for the left-hand sidebar"
   location         : "St. Louis, MO, USA"
   employer         :
   pubmed           :
