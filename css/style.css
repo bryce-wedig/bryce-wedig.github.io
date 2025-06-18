@@ -98,6 +98,18 @@ ul {
     list-style: disc;
 }
 
+/* Fix for nested unordered lists */
+ul li ul {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    padding-left: 40px;
+}
+
+ul li ul li {
+    padding-left: 0;
+    margin-bottom: 5px;
+}
+
 ol li ul li {
     padding-left: 20px;
 }
