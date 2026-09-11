@@ -126,6 +126,7 @@ h1, h2, h3 {
 
 .site-header__inner {
   max-width: var(--measure);
+  margin-inline: auto;
   padding: 22px var(--gutter);
   display: flex;
   align-items: center;
@@ -178,6 +179,7 @@ h1, h2, h3 {
 
 .section {
   max-width: var(--measure);
+  margin-inline: auto;
   padding: 56px var(--gutter) 0;
 }
 
@@ -221,6 +223,7 @@ h1, h2, h3 {
 
 .hero {
   max-width: var(--measure);
+  margin-inline: auto;
   padding: 64px var(--gutter) 0;
   display: flex;
   gap: 48px;
@@ -464,6 +467,7 @@ h1, h2, h3 {
 
 .two-col {
   max-width: var(--measure);
+  margin-inline: auto;
   padding: 56px var(--gutter) 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -598,7 +602,7 @@ h1, h2, h3 {
 
 .site-footer {
   max-width: var(--measure);
-  margin-top: 64px;
+  margin: 64px auto 0;
   border-top: 1px solid var(--rule);
   padding: 40px var(--gutter) 56px;
 }
@@ -621,6 +625,7 @@ h1, h2, h3 {
 
 .detail {
   max-width: var(--measure);
+  margin-inline: auto;
   padding: 44px var(--gutter) 48px;
   display: flex;
   gap: 56px;
@@ -805,8 +810,8 @@ h1, h2, h3 {
 /* Footer nav on detail pages */
 .pager {
   max-width: var(--measure);
+  margin: 44px auto 0;
   border-top: 1px solid var(--rule);
-  margin-top: 44px;
   padding: 24px var(--gutter) 48px;
   display: flex;
   justify-content: space-between;
