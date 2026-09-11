@@ -1,0 +1,37 @@
+---
+import { site } from '@lib/data';
+import IconMoon from './IconMoon.astro';
+import IconSun from './IconSun.astro';
+
+interface Props {
+  /** Which top-level section to mark active: 'research' | 'software'. */
+  nav?: string;
+}
+
+const { nav } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="wordmark" href="/">Bryce&nbsp;Wedig</a>
+    <nav class="site-nav">
+      <a href="/#research" class={nav === 'research' ? 'is-active' : undefined}>Research</a>
+      <a href="/#software" class={nav === 'software' ? 'is-active' : undefined}>Software</a>
+      <a href="/#publications">Publications</a>
+      <a href="/#teaching">Teaching</a>
+      <a href="/#outreach">Outreach</a>
+      <a href="/#press">Press</a>
+      <a href={site.links.cv}>CV</a>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        title="Toggle dark mode"
+        aria-label="Toggle dark mode"
+      >
+        <IconMoon />
+        <IconSun />
+      </button>
+    </nav>
+  </div>
+</header>

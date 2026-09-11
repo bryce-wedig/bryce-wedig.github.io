@@ -1,0 +1,16 @@
+TODO.md
+
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# editors
+/.idea
+.DS_Store
+
+# environment
+.env
+.env.production

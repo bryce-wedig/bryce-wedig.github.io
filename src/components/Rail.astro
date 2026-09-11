@@ -1,0 +1,49 @@
+---
+export interface RailItem {
+  label: string;
+  value?: string;
+  href?: string;
+  suffix?: string;
+  tone?: 'ok' | 'accent' | 'dim' | 'mut';
+  links?: { label: string; href: string }[];
+}
+
+interface Props {
+  items: RailItem[];
+}
+
+const { items } = Astro.props;
+
+const isExternal = (href: string) => href.includes('://');
+---
+
+<aside class="rail">
+  {
+    items.map((item) => (
+      <div class="rail__item">
+        <div class="rail__label">{item.label}</div>
+        <div
+          class:list={[
+            'rail__value',
+            item.tone && `is-${item.tone}`,
+            item.links && 'rail__value--links',
+          ]}
+        >
+          {item.links ? (
+            item.links.map((link) => <a href={link.href}>{link.label}</a>)
+          ) : item.href ? (
+            <a
+              href={item.href}
+              target={isExternal(item.href) ? '_blank' : undefined}
+              rel={isExternal(item.href) ? 'noopener' : undefined}
+              set:html={item.value}
+            />
+          ) : (
+            <Fragment set:html={item.value} />
+          )}
+          {item.suffix && <> <span class="is-dim">{item.suffix}</span></>}
+        </div>
+      </div>
+    ))
+  }
+</aside>

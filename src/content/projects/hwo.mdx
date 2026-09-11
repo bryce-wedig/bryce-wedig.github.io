@@ -1,0 +1,35 @@
+---
+key: hwo
+order: 3
+title: Forecasting Dark Matter Substructure Detections with NASA's Habitable Worlds Observatory
+description: >-
+  Simulating high-signal-to-noise strong lens observations from NASA's Habitable Worlds Observatory to forecast dark matter substructure detections
+tags: [dm]
+
+# Homepage tile
+thumb: ../../images/hwo_strong_lenses.png
+status_short: In prep
+status_tone: quiet
+blurb: >-
+  Simulating high-signal-to-noise strong lens observations from NASA's Habitable Worlds Observatory to forecast dark matter substructure detections
+
+lede: >-
+  Simulating high-signal-to-noise strong lens observations from NASA's Habitable Worlds Observatory to forecast dark matter substructure detections
+
+rail:
+  - label: Status
+    value: In prep · 2026
+    tone: dim
+  - label: Code
+    value: mejiro
+    href: https://github.com/AstroMusers/mejiro
+---
+
+import Figure from '@components/Figure.astro';
+import hwoStrongLenses from '../../images/hwo_strong_lenses.png';
+
+The *Habitable Worlds Observatory* ("*HWO*") is NASA's next flagship mission, expected to launch in the early 2040s, and the top priority of the 2020 Decadal Survey by the National Academies. While its primary mission is to search for signs of life on nearby exoplanets, its aperture and stability make it the most sensitive instrument ever created for detecting dark matter clumps.
+
+I am working on a paper forecasting the constraints on dark matter we could expect from high-SNR strong lens observations with *HWO*.
+
+<Figure n="1" src={hwoStrongLenses} alt="Simulated HWO observations of galaxy-scale strong lenses" caption="Simulated <i>HWO</i> observations of galaxy-scale strong lenses" />

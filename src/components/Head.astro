@@ -1,0 +1,47 @@
+---
+import { site } from '@lib/data';
+
+interface Props {
+  /** Page title; omitted on the homepage, which uses the site title alone. */
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const pageTitle = title ? `${title} · ${site.title}` : site.title;
+const metaDescription = (description ?? site.description).replace(/\s+/g, ' ').trim();
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={metaDescription} />
+<meta name="author" content={site.author.name} />
+<link rel="canonical" href={canonical} />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonical} />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+{/* Resolve the stored theme before first paint so the page never flashes the wrong palette. */}
+<script is:inline>
+  (function () {
+    try {
+      if (localStorage.getItem('bw-theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {}
+  })();
+</script>

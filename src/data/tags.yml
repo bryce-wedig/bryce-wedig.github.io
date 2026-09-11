@@ -1,0 +1,12 @@
+# Research filter tags. `id` must match the `tags:` values in _projects/*.md.
+# "all" is the default and always shows every tile.
+- id: all
+  label: All
+- id: roman
+  label: Roman
+- id: jwst
+  label: JWST
+- id: dm
+  label: Dark matter
+- id: ml
+  label: Machine learning

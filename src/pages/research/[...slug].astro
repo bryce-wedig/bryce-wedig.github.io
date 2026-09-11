@@ -1,0 +1,55 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Rail from '@components/Rail.astro';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+  return projects.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: projects[(i + 1) % projects.length]! },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+  next: CollectionEntry<'projects'>;
+}
+
+const { project, next } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout
+  title={project.data.title}
+  description={project.data.description}
+  bodyClass="detail-page"
+  nav="research"
+>
+  <main class="detail">
+    <div class="detail__main">
+      <div class="breadcrumb">
+        <a href="/#research">Research</a> / {project.data.title}
+      </div>
+
+      <h1>{project.data.title}</h1>
+
+      <p class="detail__lede" set:html={project.data.lede} />
+
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    <Rail items={project.data.rail} />
+  </main>
+
+  <nav class="pager">
+    <a class="pager__prev" href="/#research">← All research</a>
+    <a class="pager__next" href={`/research/${next.id}/`}>
+      Next: {next.data.short_title ?? next.data.title} →
+    </a>
+  </nav>
+</BaseLayout>

@@ -1,0 +1,25 @@
+{
+  "name": "bryce-wedig.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/prune-orphan-assets.mjs",
+    "preview": "astro preview",
+    "check": "astro check",
+    "sync-github": "node scripts/fetch-github-data.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.2",
+    "sharp": "^0.35.4",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@rollup/plugin-yaml": "^5.0.0",
+    "typescript": "^6.0.3"
+  }
+}

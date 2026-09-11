@@ -1,0 +1,76 @@
+---
+import Head from '@components/Head.astro';
+import Header from '@components/Header.astro';
+import { site } from '@lib/data';
+import '@styles/main.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  bodyClass: string;
+  nav?: string;
+}
+
+const { title, description, bodyClass, nav } = Astro.props;
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <Head title={title} description={description} />
+  </head>
+  <body class={bodyClass}>
+    <Header nav={nav} />
+    <slot />
+
+    <script>
+      // Theme toggle, research tag filter, press expander. The theme class itself
+      // is set before first paint by the inline script in Head.astro.
+      const root = document.documentElement;
+
+      document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const dark = root.classList.toggle('dark');
+          try {
+            localStorage.setItem('bw-theme', dark ? 'dark' : 'light');
+          } catch (e) {}
+        });
+      });
+
+      const filter = document.querySelector('[data-tag-filter]');
+      const grid = document.querySelector('[data-tile-grid]');
+
+      if (filter && grid) {
+        const tiles = Array.from(grid.querySelectorAll<HTMLElement>('.tile'));
+
+        filter.addEventListener('click', (event) => {
+          const link = (event.target as HTMLElement).closest<HTMLElement>('[data-tag]');
+          if (!link) return;
+          event.preventDefault();
+
+          const tag = link.getAttribute('data-tag');
+
+          filter.querySelectorAll('[data-tag]').forEach((el) => {
+            el.classList.toggle('is-active', el === link);
+          });
+
+          tiles.forEach((tile) => {
+            const tags = (tile.getAttribute('data-tags') || '').split(' ');
+            tile.hidden = tag !== 'all' && !tags.includes(tag!);
+          });
+        });
+      }
+
+      const press = document.querySelector('[data-press]');
+
+      if (press) {
+        press.querySelectorAll('[data-press-toggle]').forEach((control) => {
+          control.addEventListener('click', (event) => {
+            event.preventDefault();
+            press.classList.toggle('is-collapsed');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

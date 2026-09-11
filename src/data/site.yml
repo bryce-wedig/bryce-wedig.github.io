@@ -1,0 +1,38 @@
+title: Bryce Wedig
+description: >-
+  PhD candidate in physics at Washington University in St. Louis, studying what galaxy-scale strong gravitational lenses can tell us about the nature of dark matter
+url: https://bryce-wedig.github.io
+lang: en
+
+author:
+  name: Bryce Wedig
+  email: b.t.wedig@wustl.edu
+
+# Used by the GitHub data sync and by "Recent pull requests" blocks
+github_username: bryce-wedig
+
+links:
+  cv: /files/wedig_cv.pdf
+  github: https://github.com/bryce-wedig
+  orcid: http://orcid.org/0000-0002-0748-7312
+  ads: https://ui.adsabs.harvard.edu/search/q=author%3A%22Wedig%2C%20Bryce%22
+  linkedin: https://www.linkedin.com/in/bryce-wedig
+  advisor: https://sites.wustl.edu/astromusers/
+
+contact:
+  address:
+    - Washington University
+    - MSC 1105-109-02
+    - One Brookings Drive
+    - St. Louis, MO 63130-4899
+  email: b.t.wedig@wustl.edu
+
+# Homepage hero copy
+hero:
+  lede_html: >-
+    PhD candidate in physics at Washington University in St. Louis, working with
+    <a href="https://sites.wustl.edu/astromusers/" target="_blank" rel="noopener">Professor Tansu Daylan</a>
+    on what galaxy-scale strong gravitational lenses can tell us about the nature of dark matter
+
+# How many press items show before the "show all" toggle.
+press_visible: 5

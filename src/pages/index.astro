@@ -1,0 +1,241 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { outreach, press, publications, repoData, site, tags, teaching } from '@lib/data';
+import { responsive } from '@lib/images';
+import portrait from '../images/wedig_headshot.jpg';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const software = (await getCollection('software')).sort((a, b) => a.data.order - b.data.order);
+
+const pressVisible = site.press_visible;
+const hiddenCount = press.length - pressVisible;
+---
+
+<BaseLayout bodyClass="home-page">
+  <main>
+    <section class="hero">
+      <div class="hero__text">
+        <h1>{site.author.name}</h1>
+        <p class="hero__lede" set:html={site.hero.lede_html} />
+        <div class="hero__links">
+          <a class="btn btn--solid" href={site.links.cv} target="_blank">Curriculum Vitae</a>
+          <a class="btn btn--ghost" href={site.links.github} target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href={site.links.orcid} target="_blank" rel="noopener">ORCID</a>
+          <a class="btn btn--ghost" href={site.links.ads} target="_blank" rel="noopener">ADS</a>
+          <a class="btn btn--ghost" href={site.links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero__portrait">
+        <Image
+          src={portrait}
+          alt={site.author.name}
+          {...responsive(portrait, [300, 600])}
+          sizes="300px"
+          loading="eager"
+        />
+      </div>
+    </section>
+
+    <!-- Research ............................................................ -->
+    <section id="research" class="section section--lead">
+      <div class="section-head">
+        <h2>Research</h2>
+        <div class="tag-filter" data-tag-filter>
+          {
+            tags.map((tag, i) => (
+              <a href="#research" data-tag={tag.id} class={i === 0 ? 'is-active' : undefined}>
+                {tag.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="tile-grid" data-tile-grid>
+        {
+          projects.map((project) => (
+              <a
+                class="tile"
+                href={`/research/${project.id}/`}
+                data-tags={project.data.tags.join(' ')}
+              >
+                <Image
+                  class="tile__thumb"
+                  src={project.data.thumb}
+                  alt=""
+                  {...responsive(project.data.thumb, [400, 800])}
+                  sizes="(max-width: 900px) 100vw, 380px"
+                />
+                <div class="tile__status">
+                  <span class={`tile__dot tile__dot--${project.data.status_tone}`} />
+                  <span class="tile__status-label">{project.data.status_short}</span>
+                </div>
+                <div class="tile__title">{project.data.short_title ?? project.data.title}</div>
+                <div class="tile__blurb">{project.data.blurb}</div>
+              </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Software ............................................................ -->
+    <section id="software" class="section">
+      <div class="section-head">
+        <h2>Software</h2>
+        <a class="section-link" href={site.links.github} target="_blank" rel="noopener">GITHUB →</a>
+      </div>
+
+      <div class="tile-grid">
+        {
+          software.map((item) => {
+            const gh = repoData(item.data.repo);
+            return (
+              <a class="repo-card" href={`/software/${item.id}/`}>
+                <div class="repo-card__top">
+                  <div class="repo-card__name">{item.data.title}</div>
+                  {gh && <div class="repo-card__stars">★ {gh.stars}</div>}
+                </div>
+                <div class="repo-card__role">{item.data.role}</div>
+                <div class="repo-card__blurb">{item.data.blurb}</div>
+                <div class="repo-card__stack">{item.data.stack}</div>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <!-- Publications ........................................................ -->
+    <section id="publications" class="section">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <a class="section-link" href={site.links.ads} target="_blank" rel="noopener">
+          FULL LIST ON ADS →
+        </a>
+      </div>
+
+      {
+        publications.map((pub) => (
+          <div class="pub">
+            <div class="pub__year">{pub.year}</div>
+            <div class="pub__body">
+              <a class="pub__title" href={pub.href} target="_blank" rel="noopener">
+                {pub.title}
+              </a>
+              <div class="pub__byline" set:html={pub.byline} />
+              <div class="pub__meta">
+                {pub.position} ·{' '}
+                <a href={pub.href} target="_blank" rel="noopener">
+                  ADS
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <!-- Teaching ............................................................ -->
+    <div class="two-col">
+      <section id="teaching">
+        <div class="section-head">
+          <h2>Teaching &amp; mentoring</h2>
+        </div>
+        <div class="entry-list">
+          {
+            teaching.map((item) => (
+              <div class="entry">
+                <div class="entry__year">{item.year}</div>
+                <div class="entry__body" set:html={item.body} />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+
+    <!-- Outreach ............................................................ -->
+    <section id="outreach" class="section">
+      <div class="section-head">
+        <h2>Outreach &amp; science policy</h2>
+      </div>
+      <div class="outreach-grid">
+        {
+          outreach.map((item) => (
+            <div class="outreach-item">
+              <div class="outreach-item__title">{item.title}</div>
+              <div class="outreach-item__body" set:html={item.body} />
+              <a class="outreach-item__link" href={item.href} target="_blank" rel="noopener">
+                {item.link_label} →
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Press ............................................................... -->
+    <section id="press" class="section press is-collapsed" data-press>
+      <div class="section-head">
+        <h2>Press</h2>
+        <a class="section-link press-toggle" href="#press" data-press-toggle>
+          <span class="press-toggle__all">SHOW ALL {press.length} ITEMS →</span>
+          <span class="press-toggle__less">SHOW LESS ↑</span>
+        </a>
+      </div>
+
+      <div class="press-list">
+        {
+          press.map((item, i) => (
+            <div class:list={['press-item', i >= pressVisible && 'is-overflow']}>
+              <div class="press-item__date">{item.date}</div>
+              <div class="press-item__body">
+                <a href={item.href} target="_blank" rel="noopener">
+                  {item.title}
+                </a>
+                {item.note && <> <span class="press-item__note">{item.note}</span></>}
+              </div>
+            </div>
+          ))
+        }
+
+        {
+          hiddenCount > 0 && (
+            <a class="press-more" href="#press" data-press-toggle>
+              <span class="press-more__rules">
+                <span />
+                <span />
+                <span />
+              </span>
+              + {hiddenCount} more press items
+            </a>
+          )
+        }
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="eyebrow">Contact</div>
+      <div class="site-footer__address" set:html={site.contact.address.join('<br>')} />
+      <a class="site-footer__email" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>
+    </footer>
+  </main>
+
+  {/* Without JavaScript neither the filter nor the press expander can work, so
+      hide those controls and show every press item rather than truncating silently. */}
+  <noscript>
+    <style>
+      [data-tag-filter],
+      .press-toggle,
+      .press-more {
+        display: none !important;
+      }
+      .press.is-collapsed .press-item.is-overflow {
+        display: flex;
+      }
+    </style>
+  </noscript>
+</BaseLayout>

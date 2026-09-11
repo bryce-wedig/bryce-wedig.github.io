@@ -1,0 +1,44 @@
+---
+key: roman
+order: 1
+title: The Roman View of Strong Gravitational Lenses
+short_title: The Roman View of Strong Gravitational Lenses
+description: >-
+  Forecasting the Nancy Grace Roman Space Telescope's galaxy-scale strong lens population and what it will tell us about small-scale dark matter
+tags: [roman, dm]
+
+# Homepage tile
+thumb: ../../images/roman_fov.png
+status_short: Published 2025
+status_tone: published
+blurb: >-
+  Forecasting the Nancy Grace Roman Space Telescope's galaxy-scale strong lens population and what it will tell us about small-scale dark matter
+
+lede: >-
+  How many galaxy-scale strong lenses will <i>Roman</i> find, and what will they
+  tell us about dark matter at sub-galactic scales?
+
+rail:
+  - label: Status
+    value: Published · June 2025
+    tone: ok
+  - label: Paper
+    value: Wedig et al. 2025, ApJ 986 42
+    href: https://ui.adsabs.harvard.edu/abs/2025ApJ...986...42W/abstract
+  - label: Code
+    value: mejiro
+    href: https://github.com/AstroMusers/mejiro
+  - label: Press
+    value: NASA/STScI release
+    href: https://www.nasa.gov/missions/roman-space-telescope/nasas-roman-to-peer-into-cosmic-lenses-to-better-define-dark-matter/
+    suffix: and 9 syndications
+---
+
+import Figure from '@components/Figure.astro';
+import romanFov from '../../images/roman_fov.png';
+
+The *Nancy Grace Roman Space Telescope*, scheduled for launch in late 2026, will play a transformative role in strong lensing science with its planned wide-field surveys. With its remarkable 0.281 square degree field of view and diffraction-limited angular resolution of ~0.1 arcsec, *Roman* is uniquely suited to characterizing dark matter substructure from a robust population of strong lenses.
+
+As a member of the Roman Strong Lensing Wide Field Science team, I am working to prepare for the analysis of *Roman's* galaxy-scale strong lenses, with a particular focus on constraining the nature of dark matter at sub-galactic scales.
+
+<Figure n="1" src={romanFov} alt="" caption="How the variation of the point-spread function across <i>Roman's</i> 0.281 deg² field of view will affect dark matter substructure studies with <i>Roman</i>" />

@@ -1,0 +1,165 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { github, repoData, site } from '@lib/data';
+import { formatDate } from '@lib/format';
+
+export async function getStaticPaths() {
+  const software = (await getCollection('software')).sort((a, b) => a.data.order - b.data.order);
+  const projects = await getCollection('projects');
+
+  return software.map((item, i) => ({
+    params: { slug: item.id },
+    props: { item, next: software[(i + 1) % software.length]!, projects },
+  }));
+}
+
+interface Props {
+  item: CollectionEntry<'software'>;
+  next: CollectionEntry<'software'>;
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { item, next, projects } = Astro.props;
+const { Content } = await render(item);
+
+// Stars and pull requests come from src/data/github.json, refreshed nightly by
+// .github/workflows/refresh-github-data.yml — nothing is fetched at page load.
+const gh = repoData(item.data.repo);
+
+const usedIn = item.data.used_in
+  .map((use) => {
+    const target = projects.find((p) => p.data.key === use.project);
+    return target ? { href: `/research/${target.id}/`, label: use.label ?? target.data.short_title } : null;
+  })
+  .filter((link) => link !== null);
+---
+
+<BaseLayout
+  title={item.data.title}
+  description={item.data.description}
+  bodyClass="detail-page"
+  nav="software"
+>
+  <main class="detail">
+    <div class="detail__main">
+      <div class="breadcrumb">
+        <a href="/#software">Software</a> / {item.data.title}
+      </div>
+
+      <h1>{item.data.title}</h1>
+
+      <p class="detail__lede detail__lede--tight" set:html={item.data.lede} />
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      {
+        item.data.show_prs && (
+          <>
+            <div class="pr-head">
+              <h2>Recent pull requests</h2>
+              <div class="pr-head__status">
+                {gh ? `Synced ${formatDate(github.generated)}` : 'Unavailable'}
+              </div>
+            </div>
+
+            {gh && gh.prs.length > 0 ? (
+              <>
+                {gh.prs.map((pr) => (
+                  <a class="pr" href={pr.url} target="_blank" rel="noopener">
+                    <div class="pr__date">{formatDate(pr.date)}</div>
+                    <div class="pr__body">
+                      <div class="pr__title">{pr.title}</div>
+                      <div class="pr__meta">
+                        #{pr.number} · {pr.state}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+                <p class="note">
+                  Refreshed nightly from the GitHub API by a scheduled action in this repository,
+                  then rendered at build time.
+                </p>
+              </>
+            ) : gh ? (
+              <p class="note">
+                No pull requests authored by {site.github_username} in{' '}
+                <a href={`https://github.com/${item.data.repo}`} target="_blank" rel="noopener">
+                  {item.data.repo}
+                </a>{' '}
+                yet.
+              </p>
+            ) : (
+              <p class="note">
+                Pull request data for{' '}
+                <a href={`https://github.com/${item.data.repo}`} target="_blank" rel="noopener">
+                  {item.data.repo}
+                </a>{' '}
+                has not synced yet. It fills in on the next scheduled run.
+              </p>
+            )}
+          </>
+        )
+      }
+    </div>
+
+    <aside class="rail">
+      <div class="rail__item">
+        <div class="rail__label">Role</div>
+        <div class="rail__value is-accent">{item.data.role}</div>
+      </div>
+
+      <div class="rail__item">
+        <div class="rail__label">Repository</div>
+        <div class="rail__value">
+          {
+            item.data.repo ? (
+              <a href={`https://github.com/${item.data.repo}`} target="_blank" rel="noopener">
+                {item.data.repo}
+              </a>
+            ) : (
+              <a href={item.data.repo_link} target="_blank" rel="noopener">
+                {item.data.repo_link_label ?? 'Documentation ↗'}
+              </a>
+            )
+          }
+        </div>
+      </div>
+
+      {
+        gh && (
+          <div class="rail__item">
+            <div class="rail__label">Stars</div>
+            <div class="rail__value">★ {gh.stars}</div>
+          </div>
+        )
+      }
+
+      <div class="rail__item">
+        <div class="rail__label">Stack</div>
+        <div class="rail__value rail__value--stack">{item.data.stack}</div>
+      </div>
+
+      {
+        usedIn.length > 0 && (
+          <div class="rail__item">
+            <div class="rail__label">Used in</div>
+            <div class="rail__value rail__value--links">
+              {usedIn.map((link) => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </aside>
+  </main>
+
+  <nav class="pager">
+    <a class="pager__prev" href="/#software">← All software</a>
+    <a class="pager__next" href={`/software/${next.id}/`}>Next: {next.data.title} →</a>
+  </nav>
+</BaseLayout>
