@@ -1,70 +1,67 @@
 {
-  "generated": "2026-09-09T16:56:40.753Z",
+  "generated": "2026-09-12T08:41:51.354Z",
   "repos": {
+    "AstroMusers/ExoCore": {
+      "stars": 5,
+      "prs": [
+        {
+          "title": "untrack .DS_Store",
+          "number": 12,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/12",
+          "date": "2026-03-21",
+          "state": "merged"
+        },
+        {
+          "title": "freeze dependency versions",
+          "number": 11,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/11",
+          "date": "2026-03-19",
+          "state": "merged"
+        },
+        {
+          "title": "Bug fix: astroquery numpy v2.0 conflict",
+          "number": 8,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/8",
+          "date": "2026-03-18",
+          "state": "merged"
+        },
+        {
+          "title": "Fixing typos in all notebooks",
+          "number": 5,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/5",
+          "date": "2024-12-27",
+          "state": "merged"
+        },
+        {
+          "title": "Implement continuous integration",
+          "number": 4,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/4",
+          "date": "2024-12-26",
+          "state": "merged"
+        },
+        {
+          "title": "create .gitignore",
+          "number": 3,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/3",
+          "date": "2024-12-22",
+          "state": "merged"
+        },
+        {
+          "title": "clean up files",
+          "number": 1,
+          "url": "https://github.com/AstroMusers/ExoCore/pull/1",
+          "date": "2024-07-05",
+          "state": "closed"
+        }
+      ]
+    },
     "AstroMusers/lsst-strong-lens-data-challenge": {
       "stars": 0,
       "prs": []
     },
     "AstroMusers/mejiro": {
       "stars": 10,
-      "prs": [
-        {
-          "title": "Oversampled subpixel rendering",
-          "number": 19,
-          "url": "https://github.com/AstroMusers/mejiro/pull/19",
-          "date": "2026-08-03",
-          "state": "merged"
-        },
-        {
-          "title": "Add lightweight realization helpers and serialization options",
-          "number": 18,
-          "url": "https://github.com/AstroMusers/mejiro/pull/18",
-          "date": "2026-07-22",
-          "state": "merged"
-        },
-        {
-          "title": "Collapse romanisim step dir",
-          "number": 17,
-          "url": "https://github.com/AstroMusers/mejiro/pull/17",
-          "date": "2026-07-20",
-          "state": "merged"
-        },
-        {
-          "title": "Make galaxy-table seeding deterministic across processes",
-          "number": 16,
-          "url": "https://github.com/AstroMusers/mejiro/pull/16",
-          "date": "2026-07-07",
-          "state": "merged"
-        },
-        {
-          "title": "Add flux unit tests and lens subtraction routine",
-          "number": 14,
-          "url": "https://github.com/AstroMusers/mejiro/pull/14",
-          "date": "2026-03-18",
-          "state": "merged"
-        },
-        {
-          "title": "Version 3",
-          "number": 12,
-          "url": "https://github.com/AstroMusers/mejiro/pull/12",
-          "date": "2026-03-03",
-          "state": "merged"
-        },
-        {
-          "title": "JWST survey simulation",
-          "number": 11,
-          "url": "https://github.com/AstroMusers/mejiro/pull/11",
-          "date": "2025-10-16",
-          "state": "merged"
-        },
-        {
-          "title": "Add JWST image simulation functionality",
-          "number": 10,
-          "url": "https://github.com/AstroMusers/mejiro/pull/10",
-          "date": "2025-09-29",
-          "state": "merged"
-        }
-      ]
+      "prs": []
     }
   }
 }
