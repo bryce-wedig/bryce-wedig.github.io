@@ -32,8 +32,9 @@ const hiddenCount = press.length - pressVisible;
         <Image
           src={portrait}
           alt={site.author.name}
-          {...responsive(portrait, [300, 600])}
-          sizes="300px"
+          {...responsive(portrait, [400, 800, 1200])}
+          sizes="(max-width: 720px) 188px, (max-width: 900px) 250px, 400px"
+          quality={85}
           loading="eager"
         />
       </div>
