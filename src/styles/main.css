@@ -37,7 +37,7 @@
   --fade-3: #e8e5db;
 
   --gutter: 56px;
-  --measure: 1180px;
+  --measure: 1360px;
 }
 
 /* Detail pages sit on a wider gutter than the homepage. */
@@ -135,7 +135,7 @@ h1, h2, h3 {
 }
 
 .wordmark {
-  font-size: 19px;
+  font-size: 21px;
   color: var(--ink);
 }
 
@@ -143,7 +143,7 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 26px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .site-nav a { color: var(--mut-2); }
@@ -194,23 +194,23 @@ h1, h2, h3 {
   padding-bottom: 10px;
 }
 
-.section-head h2 { font-size: 26px; }
+.section-head h2 { font-size: 28px; }
 
 .section-link {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--accent);
   flex: none;
 }
 
 .eyebrow {
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--dim);
 }
 
 .note {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--dim);
   font-style: italic;
   margin: 14px 0 0;
@@ -233,17 +233,17 @@ h1, h2, h3 {
 .hero__text { flex: 1; min-width: 0; }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 56px;
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
 .hero__lede {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.5;
   color: var(--mut);
   margin: 16px 0 0;
-  max-width: 46ch;
+  max-width: 50ch;
 }
 
 .hero__links {
@@ -254,7 +254,7 @@ h1, h2, h3 {
 }
 
 .hero__portrait {
-  width: 400px;
+  width: 440px;
   flex: none;
   align-self: flex-start;
 }
@@ -268,7 +268,7 @@ h1, h2, h3 {
 }
 
 .btn {
-  font-size: 13.5px;
+  font-size: 15.5px;
   padding: 8px 16px;
   border-radius: 2px;
   border: 1px solid transparent;
@@ -292,7 +292,7 @@ h1, h2, h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .08em;
   text-transform: uppercase;
   flex: none;
@@ -348,14 +348,14 @@ h1, h2, h3 {
 .tile__dot--ongoing { background: var(--dot-ongoing); }
 
 .tile__status-label {
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--mut);
 }
 
 .tile__title {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.25;
   color: var(--ink);
   margin-top: 8px;
@@ -364,7 +364,7 @@ h1, h2, h3 {
 .tile:hover .tile__title { color: var(--accent); }
 
 .tile__blurb {
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.55;
   color: var(--mut);
   margin-top: 8px;
@@ -388,7 +388,7 @@ h1, h2, h3 {
 }
 
 .repo-card__name {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--ink);
   min-width: 0;
   overflow: hidden;
@@ -398,14 +398,14 @@ h1, h2, h3 {
 .repo-card:hover .repo-card__name { color: var(--accent); }
 
 .repo-card__stars {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--dim);
   white-space: nowrap;
   flex: none;
 }
 
 .repo-card__role {
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: var(--accent);
@@ -413,14 +413,14 @@ h1, h2, h3 {
 }
 
 .repo-card__blurb {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--mut);
   margin-top: 8px;
 }
 
 .repo-card__stack {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: var(--dim);
   margin-top: 12px;
 }
@@ -435,7 +435,7 @@ h1, h2, h3 {
 }
 
 .pub__year {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent);
   width: 56px;
   flex: none;
@@ -445,20 +445,20 @@ h1, h2, h3 {
 .pub__body { flex: 1; min-width: 0; }
 
 .pub__title {
-  font-size: 19px;
+  font-size: 21px;
   line-height: 1.35;
   color: var(--ink);
 }
 
 .pub__byline {
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.55;
   color: var(--mut);
   margin-top: 4px;
 }
 
 .pub__meta {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--dim);
   margin-top: 6px;
 }
@@ -484,12 +484,12 @@ h1, h2, h3 {
 .entry {
   display: flex;
   gap: 16px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
 .entry__year {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent);
   width: 44px;
   flex: none;
@@ -513,20 +513,20 @@ h1, h2, h3 {
 }
 
 .outreach-item__title {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.3;
   color: var(--ink);
 }
 
 .outreach-item__body {
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.55;
   color: var(--mut);
   margin-top: 8px;
 }
 
 .outreach-item__link {
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: var(--accent);
   display: inline-block;
   margin-top: 8px;
@@ -544,7 +544,7 @@ h1, h2, h3 {
 }
 
 .press-item__date {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--accent);
   width: 96px;
   flex: none;
@@ -554,7 +554,7 @@ h1, h2, h3 {
 .press-item__body {
   flex: 1;
   min-width: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--mut);
 }
@@ -566,7 +566,7 @@ h1, h2, h3 {
   align-items: center;
   gap: 12px;
   padding: 16px 0;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--dim);
@@ -608,7 +608,7 @@ h1, h2, h3 {
 }
 
 .site-footer__address {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--mut);
   margin-top: 10px;
@@ -617,7 +617,7 @@ h1, h2, h3 {
 .site-footer__email {
   display: inline-block;
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--ink);
 }
 
@@ -628,7 +628,7 @@ h1, h2, h3 {
   margin-inline: auto;
   padding: 44px var(--gutter) 48px;
   display: flex;
-  gap: 56px;
+  gap: 72px;
   align-items: flex-start;
 }
 
@@ -638,7 +638,7 @@ h1, h2, h3 {
 }
 
 .breadcrumb {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--dim);
@@ -647,14 +647,14 @@ h1, h2, h3 {
 .breadcrumb a { color: var(--accent); }
 
 .detail h1 {
-  font-size: 38px;
+  font-size: 42px;
   line-height: 1.14;
   letter-spacing: -0.015em;
   margin-top: 14px;
 }
 
 .detail__lede {
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.5;
   color: var(--ink);
   margin: 28px 0 0;
@@ -666,20 +666,20 @@ h1, h2, h3 {
 .prose > *:first-child { margin-top: 18px; }
 
 .prose p {
-  font-size: 15.5px;
+  font-size: 17.5px;
   line-height: 1.75;
   color: var(--mut);
   margin: 18px 0 0;
 }
 
 .prose h2 {
-  font-size: 22px;
+  font-size: 24px;
   margin: 32px 0 0;
 }
 
 .prose ul,
 .prose ol {
-  font-size: 15.5px;
+  font-size: 17.5px;
   line-height: 1.75;
   color: var(--mut);
   margin: 12px 0 0;
@@ -699,7 +699,7 @@ h1, h2, h3 {
 }
 
 .figure figcaption {
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.55;
   color: var(--dim);
   margin-top: 10px;
@@ -709,7 +709,7 @@ h1, h2, h3 {
 
 /* Rail */
 .rail {
-  width: 230px;
+  width: 290px;
   flex: none;
   display: flex;
   flex-direction: column;
@@ -726,14 +726,14 @@ h1, h2, h3 {
 .rail__item:first-child { border-top: 2px solid var(--rule-strong); }
 
 .rail__label {
-  font-size: 10px;
+  font-size: 12.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--dim);
 }
 
 .rail__value {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   margin-top: 4px;
   color: var(--ink);
@@ -766,10 +766,10 @@ h1, h2, h3 {
   margin-top: 36px;
 }
 
-.pr-head h2 { font-size: 22px; }
+.pr-head h2 { font-size: 24px; }
 
 .pr-head__status {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--dim);
@@ -786,7 +786,7 @@ h1, h2, h3 {
 .pr__date {
   width: 92px;
   flex: none;
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: var(--accent);
   padding-top: 2px;
 }
@@ -794,7 +794,7 @@ h1, h2, h3 {
 .pr__body { flex: 1; min-width: 0; }
 
 .pr__title {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.45;
   color: var(--ink);
 }
@@ -802,7 +802,7 @@ h1, h2, h3 {
 .pr:hover .pr__title { color: var(--accent); }
 
 .pr__meta {
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: var(--dim);
   margin-top: 2px;
 }
@@ -816,14 +816,14 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  font-size: 13.5px;
+  font-size: 15.5px;
 }
 
 .pager__prev { color: var(--mut-2); }
 .pager__next { color: var(--ink); text-align: right; }
 
 /* --- Responsive ------------------------------------------------------------
-   The prototypes are desktop-only (1180px). These breakpoints reflow the
+   The prototypes are desktop-only (1360px). These breakpoints reflow the
    three-column grids and move the detail rail below the text column.
    -------------------------------------------------------------------------- */
 
@@ -838,11 +838,11 @@ h1, h2, h3 {
   .tile-grid,
   .outreach-grid { grid-template-columns: repeat(2, 1fr); }
 
-  .hero h1 { font-size: 44px; }
+  .hero h1 { font-size: 46px; }
 
   .hero__portrait { width: 250px; }
 
-  .site-nav { gap: 18px; font-size: 13.5px; }
+  .site-nav { gap: 18px; font-size: 15px; }
 
   .detail {
     display: block;
@@ -890,9 +890,9 @@ h1, h2, h3 {
     padding-top: 44px;
   }
 
-  .hero h1 { font-size: 38px; }
+  .hero h1 { font-size: 40px; }
 
-  .hero__lede { font-size: 18px; }
+  .hero__lede { font-size: 20px; }
 
   .hero__portrait {
     width: 188px;
@@ -911,9 +911,9 @@ h1, h2, h3 {
 
   .rail { grid-template-columns: 1fr; }
 
-  .detail h1 { font-size: 30px; }
+  .detail h1 { font-size: 32px; }
 
-  .detail__lede { font-size: 19px; }
+  .detail__lede { font-size: 20px; }
 
   .pub,
   .press-item,
