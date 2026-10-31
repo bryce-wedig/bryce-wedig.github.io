@@ -1,0 +1,128 @@
+# Talks and posters, grouped as on the CV. Each group renders as a collapsible
+# block; `open: false` starts it collapsed. Within a group, items render in file
+# order (newest first).
+- group: Invited talks
+  open: true
+  items:
+    - date: Dec 2025
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - “Nature of Dark Matter at Small Scales” Virtual Seminar Series
+      # TODO: add a link to the recording or slides, if available
+
+- group: Contributed talks
+  open: true
+  items:
+    - date: Dec 2025
+      title: “Probing Dark Matter Microphysics with JWST’s Galaxy-Galaxy Strong Gravitational Lenses”
+      details:
+        - 53rd Mid-American Regional Astrophysics Conference, Columbia, MO, USA
+    - date: Oct 2025
+      title: “A JWST Survey of Subhalos Across Cosmic Time”
+      details:
+        - 1st Workshop Scaling up Lensing, University in Liège, Liège, Belgium
+    - date: Jul 2025
+      title: “The Microphysics of Dark Matter with the Habitable Worlds Observatory”
+      details:
+        - 'Towards the Habitable Worlds Observatory: Visionary Science and Transformational Technology'
+        - Washington, D.C., USA
+    - date: Apr 2025
+      title: “Hunting for Dark Matter with NASA’s Next Space Telescope”
+      details:
+        - 2025 Graduate Research Symposium, Washington University in St. Louis
+    - date: Jan 2025
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - 245th Meeting of the American Astronomical Society, National Harbor, MD, USA
+    - date: Dec 2024
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - 52nd Mid-American Regional Astrophysics Conference, Lawrence, KS, USA
+    - date: Jul 2024
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - 'Challenging Theory with Roman: From Planet Formation to Cosmology, Pasadena, CA, USA'
+    - date: Jan 2024
+      title: “Image Simulation of Strong Gravitational Lenses Detectable by the Roman Space Telescope”
+      details:
+        - 243rd Meeting of the American Astronomical Society, New Orleans, LA, USA
+
+- group: Seminars
+  open: false
+  items:
+    - date: Nov 2025
+      title: “Searching for dark matter substructure in JWST’s galaxy-scale strong lenses”
+      details:
+        - Washington University Cosmology and Astroparticle Physics Meeting
+        - Department of Physics, Washington University in St. Louis
+    - date: Feb 2025
+      title: “Hunting for Dark Matter with Space Telescopes”
+      details:
+        - A&amp;S Research Roundtable, School of Arts &amp; Sciences, Washington University in St. Louis
+    - date: Nov 2024
+      title: “Maximizing JWST and Roman Dark Matter Science with Strong Gravitational Lensing”
+      details:
+        - Washington University Cosmology and Astroparticle Physics Meeting
+        - Department of Physics, Washington University in St. Louis
+    - date: Nov 2024
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - Physics Graduate Student Seminar, Department of Physics, Washington University in St. Louis
+    - date: Apr 2024
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - Washington University Cosmology and Astroparticle Physics Meeting
+        - Department of Physics, Washington University in St. Louis
+    - date: Nov 2023
+      title: “Investigating Dark Matter Substructure with Gravitational Lensing”
+      details:
+        - Physics Graduate Student Seminar, Department of Physics, Washington University in St. Louis
+    - date: Easter 2019
+      title: “Lessons for wavefunction ontology from Koopman-von Neumann theory”
+      details:
+        - MPhil Seminar, Department of History and Philosophy of Science, University of Cambridge
+    - date: Lent 2019
+      title: “Assessing the Quantum Liar Paradox”
+      details:
+        - MPhil Seminar, Department of History and Philosophy of Science, University of Cambridge
+    - date: Apr 2018
+      title: “Is Nature Nonlocal?”
+      details:
+        - Senior Exercise, Department of Physics, Kenyon College
+    - date: Aug 2016
+      title: '“Reducing quantum noise in LIGO: Characterization of an ultra-low loss polarizing beam splitter”'
+      details:
+        - Ole Miss Chemistry Summer Research Program, University of Mississippi
+
+- group: Posters
+  open: false
+  items:
+    - date: Feb 2026
+      title: “Forecasting Dark Matter Subhalo Detections with NASA’s Habitable Worlds Observatory”
+      details:
+        - 2026 Annual Meeting of the American Association for the Advancement of Science
+        - Phoenix, AZ
+    - date: Nov 2025
+      title: “Forecasting Dark Matter Subhalo Detections with NASA’s Habitable Worlds Observatory”
+      details:
+        - Washington University Physics Research Symposium
+        - Department of Physics, Washington University in St. Louis
+    - date: Apr 2025
+      title: “Hunting for Dark Matter with NASA’s Next Space Telescope”
+      details:
+        - 50th Anniversary Symposium, McDonnell Center for the Space Sciences
+        - Washington University in St. Louis
+    - date: Apr 2025
+      title: “Hunting for Dark Matter with NASA’s Next Space Telescope”
+      details:
+        - 2025 Imaging Science Pathway Retreat, Washington University in St. Louis
+    - date: Nov 2024
+      title: “The Roman View of Strong Gravitational Lenses”
+      details:
+        - Washington University Physics Research Symposium
+        - Department of Physics, Washington University in St. Louis
+    - date: Nov 2023
+      title: “Image Simulation of Strong Gravitational Lenses Detectable by the Roman Space Telescope”
+      details:
+        - Washington University Physics Research Symposium
+        - Department of Physics, Washington University in St. Louis

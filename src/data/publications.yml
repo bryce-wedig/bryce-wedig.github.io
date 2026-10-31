@@ -1,3 +1,20 @@
+# Newest first. `link_label` names the link in the meta line (defaults to ADS).
+# TODO: for the two arXiv preprints, add the journal reference and switch the
+# link to ADS once they are published.
+- year: 2026
+  title: 'Strong Lensing Tomography: Double and pseudo multi-source plane strong gravitational lensing to constrain dark energy'
+  byline: Sharma et al. — <i>arXiv e-prints</i>, arXiv:2607.01005
+  position: Co-author
+  href: https://arxiv.org/abs/2607.01005
+  link_label: arXiv
+
+- year: 2026
+  title: 'SLSim: a strong lensing population simulation package'
+  byline: Khadka et al. — <i>arXiv e-prints</i>, arXiv:2603.17138
+  position: Co-author
+  href: https://arxiv.org/abs/2603.17138
+  link_label: arXiv
+
 - year: 2025
   title: The Roman View of Strong Gravitational Lenses
   byline: Wedig, Daylan et al. — <i>The Astrophysical Journal</i> <b>986</b>, 42

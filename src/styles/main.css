@@ -216,7 +216,6 @@ h1, h2, h3 {
   margin: 14px 0 0;
 }
 
-.entry-list .note { margin-top: 4px; }
 .detail .note { margin-top: 12px; }
 
 /* --- Hero ----------------------------------------------------------------- */
@@ -463,7 +462,7 @@ h1, h2, h3 {
   margin-top: 6px;
 }
 
-/* --- Teaching -------------------------------------------------------------- */
+/* --- CV lists (talks, honors, teaching, education, …) ---------------------- */
 
 .two-col {
   max-width: var(--measure);
@@ -474,29 +473,84 @@ h1, h2, h3 {
   gap: 48px;
 }
 
-.entry-list {
+.cv-group { margin-top: 22px; }
+
+.cv-group__head {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 18px;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding-bottom: 4px;
 }
 
-.entry {
+summary.cv-group__head {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary.cv-group__head::-webkit-details-marker { display: none; }
+
+summary.cv-group__head::before {
+  content: "+";
+  width: 10px;
+  color: var(--accent);
+}
+
+details[open] > summary.cv-group__head::before { content: "−"; }
+
+summary.cv-group__head:hover { color: var(--accent); }
+
+.cv-group__count { color: var(--mut-2); }
+
+.cv-item {
   display: flex;
-  gap: 16px;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.cv-item__date {
+  font-size: 12px;
+  color: var(--accent);
+  width: 96px;
+  flex: none;
+  padding-top: 3px;
+}
+
+.cv-item__body {
+  flex: 1;
+  min-width: 0;
   font-size: 14px;
   line-height: 1.5;
 }
 
-.entry__year {
-  font-size: 12px;
-  color: var(--accent);
-  width: 44px;
-  flex: none;
-  padding-top: 2px;
+.cv-item__title {
+  display: block;
+  color: var(--ink);
 }
 
-.entry__body { color: var(--mut); }
+a.cv-item__title:hover { color: var(--accent); }
+
+.cv-item__detail {
+  font-size: 13px;
+  color: var(--mut);
+  margin-top: 2px;
+}
+
+.cv-item__detail a { color: var(--accent); }
+
+.cv-list--stacked .cv-item {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cv-list--stacked .cv-item__date {
+  width: auto;
+  padding-top: 0;
+}
 
 /* --- Outreach -------------------------------------------------------------- */
 
@@ -917,7 +971,7 @@ h1, h2, h3 {
 
   .pub,
   .press-item,
-  .entry,
+  .cv-item,
   .pr {
     flex-direction: column;
     gap: 6px;
@@ -925,7 +979,7 @@ h1, h2, h3 {
 
   .pub__year,
   .press-item__date,
-  .entry__year,
+  .cv-item__date,
   .pr__date { width: auto; padding-top: 0; }
 
   .pager { flex-direction: column; gap: 12px; }

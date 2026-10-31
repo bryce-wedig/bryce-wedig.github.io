@@ -5,6 +5,11 @@ import tagsYaml from '../data/tags.yml';
 import pressYaml from '../data/press.yml';
 import publicationsYaml from '../data/publications.yml';
 import teachingYaml from '../data/teaching.yml';
+import mentoringYaml from '../data/mentoring.yml';
+import talksYaml from '../data/talks.yml';
+import honorsYaml from '../data/honors.yml';
+import educationYaml from '../data/education.yml';
+import experienceYaml from '../data/experience.yml';
 import outreachYaml from '../data/outreach.yml';
 import githubJson from '../data/github.json';
 
@@ -69,17 +74,44 @@ const publicationsSchema = z.array(
     byline: z.string(),
     position: z.string(),
     href: z.string(),
+    link_label: z.string().default('ADS'),
   }),
 );
 
-const teachingSchema = z.array(z.object({ year: z.number(), body: z.string() }));
+/**
+ * One dated line of a CV-style list (talks, teaching, honors, …). `date` is free
+ * text ("Spring 2025", "2014–2018"); a bare YAML year parses as a number, so
+ * accept that too. `title` and each `details` line may contain inline HTML.
+ */
+const cvEntrySchema = z.object({
+  date: z
+    .union([z.string(), z.number()])
+    .transform((value) => String(value))
+    .optional(),
+  title: z.string(),
+  details: z.array(z.string()).default([]),
+  href: z.string().optional(),
+});
+
+const cvListSchema = z.array(cvEntrySchema);
+
+const cvGroupsSchema = z.array(
+  z.object({
+    group: z.string(),
+    // Only used where groups render as collapsible blocks (talks).
+    open: z.boolean().default(true),
+    items: cvListSchema,
+  }),
+);
+
+export type CvEntry = z.infer<typeof cvEntrySchema>;
 
 const outreachSchema = z.array(
   z.object({
     title: z.string(),
     body: z.string(),
-    link_label: z.string(),
-    href: z.string(),
+    link_label: z.string().optional(),
+    href: z.string().optional(),
   }),
 );
 
@@ -119,10 +151,40 @@ export const publications: z.infer<typeof publicationsSchema> = parse(
   'src/data/publications.yml',
 );
 
-export const teaching: z.infer<typeof teachingSchema> = parse(
-  teachingSchema,
+export const teaching: z.infer<typeof cvListSchema> = parse(
+  cvListSchema,
   teachingYaml,
   'src/data/teaching.yml',
+);
+
+export const mentoring: z.infer<typeof cvListSchema> = parse(
+  cvListSchema,
+  mentoringYaml,
+  'src/data/mentoring.yml',
+);
+
+export const experience: z.infer<typeof cvListSchema> = parse(
+  cvListSchema,
+  experienceYaml,
+  'src/data/experience.yml',
+);
+
+export const talks: z.infer<typeof cvGroupsSchema> = parse(
+  cvGroupsSchema,
+  talksYaml,
+  'src/data/talks.yml',
+);
+
+export const honors: z.infer<typeof cvGroupsSchema> = parse(
+  cvGroupsSchema,
+  honorsYaml,
+  'src/data/honors.yml',
+);
+
+export const education: z.infer<typeof cvGroupsSchema> = parse(
+  cvGroupsSchema,
+  educationYaml,
+  'src/data/education.yml',
 );
 
 export const outreach: z.infer<typeof outreachSchema> = parse(

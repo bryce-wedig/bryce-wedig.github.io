@@ -1,0 +1,39 @@
+# Education and training, grouped as on the CV. Newest first.
+- group: Degrees
+  items:
+    - date: 2022–Present
+      title: Ph.D. in Physics, Washington University in St. Louis
+      details:
+        - St. Louis, MO, USA · Expected September 2027
+        - A.M. in Physics (en route) achieved May 2024, GPA 3.95/4.00
+
+    - date: 2018–2019
+      title: M.Phil. in History and Philosophy of Science and Medicine, Trinity College, University of Cambridge
+      details:
+        - Cambridge, UK · First Class Honours
+
+    - date: 2014–2018
+      title: B.A. in Physics, Philosophy, Kenyon College
+      details:
+        - Gambier, OH, USA · <i>magna cum laude</i>
+        - GPA 3.89/4.00 (Physics 3.96/4.00, Philosophy 4.00/4.00)
+
+    - date: 2016–2017
+      title: Visiting Student Programme, Physics and Philosophy, Lady Margaret Hall, University of Oxford
+      details:
+        - Oxford, UK · GPA 4.00/4.00
+
+- group: Workshops &amp; schools
+  items:
+    - date: Jan 2026
+      title: Arizona Winter School on Multi-Probe Cosmology in the Roman ST Era
+      details:
+        - University of Arizona
+    - date: Aug 2025
+      title: JWST Summer School on High-Redshift Transients
+      details:
+        - Space Telescope Science Institute
+    - date: Apr 2025
+      title: ALMA Cycle 12 Proposal Preparation Workshop
+      details:
+        - University of Missouri

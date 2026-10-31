@@ -1,0 +1,43 @@
+# Honors, awards and accepted proposals, grouped as on the CV. Items render in
+# file order (newest first). `href` is optional.
+- group: Honors &amp; awards
+  items:
+    - date: '2026'
+      title: 1st Place, Student E-Poster Competition (Physical Sciences category)
+      details:
+        - 2026 Annual Meeting of the American Association for the Advancement of Science
+    - date: '2026'
+      title: 1st Place, Poster Competition, Arizona Winter School on Multi-Probe Cosmology in the Roman ST Era
+    - date: '2025'
+      title: 1st Place (Graduate Division), Washington University Physics Research Symposium
+    - date: '2024'
+      title: 1st Place (Graduate Division), Washington University Physics Research Symposium
+    - date: '2024'
+      title: Future Investigators in NASA Earth and Space Science and Technology (FINESST)
+      href: /research/finesst/
+      details:
+        - Maximizing JWST and Roman Dark Matter Science with Strong Gravitational Lensing
+        - $150,000 award over three years
+    - date: '2019'
+      title: First Class (Distinction), M.Phil. Dissertation, University of Cambridge
+    - date: '2018'
+      title: Member, Phi Beta Kappa, Beta of Ohio, Kenyon College
+    - date: '2018'
+      title: Distinction, Senior Exercise in Physics, Department of Physics, Kenyon College
+    - date: '2018'
+      title: Distinction, Senior Exercise in Philosophy, Department of Philosophy, Kenyon College
+    - date: '2017'
+      title: Member, Sigma Pi Sigma, the Physics Honor Society (American Institute of Physics)
+    - date: 2014–2018
+      title: Merit List Scholar, Kenyon College
+    - date: 2014–2018
+      title: Trustee Opportunity Scholarship, Kenyon College
+
+- group: Accepted proposals
+  items:
+    # TODO: add the year of the Roman Cycle 1 selection, and a link to the program
+    # page if there is one; the CV gives neither.
+    - title: Co-Investigator, Roman Cycle 1 (Program ID 19045)
+      details:
+        - All the strong lenses in Roman HLWAS
+        - 'PI: Simon Birrer'

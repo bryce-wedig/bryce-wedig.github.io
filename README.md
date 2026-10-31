@@ -10,8 +10,13 @@ Bryce Wedig's personal website
 | A software package | `src/content/software/<name>.mdx` |
 | Press items | `src/data/press.yml` |
 | Publications | `src/data/publications.yml` |
-| Teaching & mentoring | `src/data/teaching.yml` |
-| Outreach & science policy | `src/data/outreach.yml` |
+| Talks & posters | `src/data/talks.yml` |
+| Honors, awards & accepted proposals | `src/data/honors.yml` |
+| Teaching | `src/data/teaching.yml` |
+| Mentoring | `src/data/mentoring.yml` |
+| Outreach, service & policy | `src/data/outreach.yml` |
+| Education, workshops & schools | `src/data/education.yml` |
+| Professional experience | `src/data/experience.yml` |
 | Research filter tags | `src/data/tags.yml` |
 | Name, links, contact block, hero copy | `src/data/site.yml` |
 
@@ -30,6 +35,12 @@ The homepage grid is three columns and reflows to any number of projects.
 **A new software package** is a new file in `src/content/software/`. Set `repo:`
 to the `owner/name` GitHub slug and `show_prs: true` to get star counts and the
 recent pull request list; the nightly sync picks up new repos automatically.
+
+Talks, honors, teaching, mentoring, education and experience all share one
+shape — `date` (free text, e.g. `Spring 2025`), `title`, optional `details`
+lines and an optional `href` — and render in file order, newest first. Talks,
+honors and education are split into `group:`s; in talks, `open: false` starts a
+group collapsed.
 
 Press items render in file order, not date order — the first five are what
 visitors see before expanding, so put the ones that matter most at the top.

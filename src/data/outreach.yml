@@ -1,8 +1,27 @@
+# `link_label` and `href` are optional; an item without them renders no link.
 - title: Organizing Member, Scientist Network for Advancing Policy
   body: >-
     The Scientist Network for Advancing Policy (SNAP) is a nationwide coalition of early-career scientists bridging science and community.
   link_label: Member SNAPshot
   href: https://medium.com/science-policy-in-a-snap/member-snapshots-february-2026-2bd3e6a18582
+
+# TODO: add a link to the event page or recording, if there is one
+- title: Speaker, “Science in St. Louis” Public Seminar Series
+  body: >-
+    “Dark Matter Detectives: Using NASA’s Space Telescopes to See the Invisible
+    Universe,” Academy of Science of St. Louis, May 2026
+
+# TODO: add a link to the ProSPER group page, if there is one
+- title: Co-president, Washington University ProSPER
+  body: >-
+    Science communication graduate student group, 2024–2026
+
+- title: Contributor, ExoCore
+  body: >-
+    “ExoCore: An Open Science Curriculum for Exoplanet Research,” NASA Open
+    Science Initiative, Dec 2024–Present
+  link_label: ExoCore
+  href: /software/exocore/
 
 - title: Speaking science to power
   body: >-

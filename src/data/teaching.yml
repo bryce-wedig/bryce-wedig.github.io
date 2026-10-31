@@ -1,5 +1,45 @@
-- year: 2025
-  body: >-
-    Mentored an undergraduate researcher through the LSST Strong Lens Data
-    Challenge, ending in a
-    <a href="https://physics.wustl.edu/news/physics-students-present-fall-2025-undergraduate-research-symposium" target="_blank" rel="noopener">presentation at the Fall 2025 Undergraduate Research Symposium</a>.
+# Teaching, newest first. `date` is free text (e.g. "Spring 2025").
+- date: Spring 2025
+  title: Guest Lecturer, Astrostatistics (PHYS 4680/5680)
+  details:
+    - Department of Physics, Washington University in St. Louis
+
+- date: Fall 2024
+  title: 'Guest Lecturer, Ampersand: Gateway Expeditions into Exoplanets (PHYS 1210)'
+  details:
+    - Department of Physics, Washington University in St. Louis
+
+- date: Fall 2023
+  title: Assistant in Instruction, Physics I Laboratory (PHYS 191L)
+  details:
+    - Department of Physics, Washington University in St. Louis
+
+- date: Spring 2023
+  title: Assistant in Instruction, Physics II Laboratory (PHYS 192L)
+  details:
+    - Department of Physics, Washington University in St. Louis
+
+- date: Fall 2017
+  title: Apprentice Teacher, Intensive Introductory Japanese (JAPN 111-112Y)
+  details:
+    - Department of Modern Languages and Literatures, Kenyon College
+
+- date: Summer 2017
+  title: 'Teaching Assistant, Advanced Topics in Physics: Special Relativity (SREL)'
+  details:
+    - Johns Hopkins Center for Talented Youth
+
+- date: Spring 2016
+  title: Tutor, Oscillations and Waves (PHYS 245)
+  details:
+    - Department of Physics, Kenyon College
+
+- date: Fall 2015–Spring 2016
+  title: Apprentice Teacher, Intermediate Japanese (JAPN 213-214Y)
+  details:
+    - Department of Modern Languages and Literatures, Kenyon College
+
+- date: Fall 2014–Spring 2015
+  title: Apprentice Teacher, Intensive Introductory Japanese (JAPN 111-112Y)
+  details:
+    - Department of Modern Languages and Literatures, Kenyon College

@@ -2,8 +2,22 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
+import CvList from '@components/CvList.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { outreach, press, publications, repoData, site, tags, teaching } from '@lib/data';
+import {
+  education,
+  experience,
+  honors,
+  mentoring,
+  outreach,
+  press,
+  publications,
+  repoData,
+  site,
+  tags,
+  talks,
+  teaching,
+} from '@lib/data';
 import { responsive } from '@lib/images';
 import portrait from '../images/wedig_headshot.jpg';
 
@@ -129,7 +143,7 @@ const hiddenCount = press.length - pressVisible;
               <div class="pub__meta">
                 {pub.position} ·{' '}
                 <a href={pub.href} target="_blank" rel="noopener">
-                  ADS
+                  {pub.link_label}
                 </a>
               </div>
             </div>
@@ -138,29 +152,59 @@ const hiddenCount = press.length - pressVisible;
       }
     </section>
 
-    <!-- Teaching ............................................................ -->
+    <!-- Talks ............................................................... -->
+    <section id="talks" class="section">
+      <div class="section-head">
+        <h2>Talks &amp; posters</h2>
+      </div>
+      {
+        talks.map((group) => (
+          <details class="cv-group" open={group.open}>
+            <summary class="cv-group__head">
+              <span set:html={group.group} />
+              <span class="cv-group__count">{group.items.length}</span>
+            </summary>
+            <CvList items={group.items} />
+          </details>
+        ))
+      }
+    </section>
+
+    <!-- Honors .............................................................. -->
+    <section id="honors" class="section">
+      <div class="section-head">
+        <h2>Honors &amp; awards</h2>
+      </div>
+      {
+        honors.map((group) => (
+          <div class="cv-group">
+            <div class="cv-group__head" set:html={group.group} />
+            <CvList items={group.items} />
+          </div>
+        ))
+      }
+    </section>
+
+    <!-- Teaching & mentoring ................................................ -->
     <div class="two-col">
       <section id="teaching">
         <div class="section-head">
-          <h2>Teaching &amp; mentoring</h2>
+          <h2>Teaching</h2>
         </div>
-        <div class="entry-list">
-          {
-            teaching.map((item) => (
-              <div class="entry">
-                <div class="entry__year">{item.year}</div>
-                <div class="entry__body" set:html={item.body} />
-              </div>
-            ))
-          }
+        <CvList items={teaching} stacked />
+      </section>
+      <section id="mentoring">
+        <div class="section-head">
+          <h2>Mentoring</h2>
         </div>
+        <CvList items={mentoring} stacked />
       </section>
     </div>
 
     <!-- Outreach ............................................................ -->
     <section id="outreach" class="section">
       <div class="section-head">
-        <h2>Outreach &amp; science policy</h2>
+        <h2>Outreach, service &amp; policy</h2>
       </div>
       <div class="outreach-grid">
         {
@@ -168,14 +212,43 @@ const hiddenCount = press.length - pressVisible;
             <div class="outreach-item">
               <div class="outreach-item__title">{item.title}</div>
               <div class="outreach-item__body" set:html={item.body} />
-              <a class="outreach-item__link" href={item.href} target="_blank" rel="noopener">
-                {item.link_label} →
-              </a>
+              {item.href && (
+                <a
+                  class="outreach-item__link"
+                  href={item.href}
+                  {...(/^https?:\/\//.test(item.href) ? { target: '_blank', rel: 'noopener' } : {})}
+                >
+                  {item.link_label ?? 'More'} →
+                </a>
+              )}
             </div>
           ))
         }
       </div>
     </section>
+
+    <!-- Education & experience ............................................ -->
+    <div class="two-col">
+      <section id="education">
+        <div class="section-head">
+          <h2>Education</h2>
+        </div>
+        {
+          education.map((group) => (
+            <div class="cv-group">
+              <div class="cv-group__head" set:html={group.group} />
+              <CvList items={group.items} stacked />
+            </div>
+          ))
+        }
+      </section>
+      <section id="experience">
+        <div class="section-head">
+          <h2>Professional experience</h2>
+        </div>
+        <CvList items={experience} stacked />
+      </section>
+    </div>
 
     <!-- Press ............................................................... -->
     <section id="press" class="section press is-collapsed" data-press>

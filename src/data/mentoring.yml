@@ -1,0 +1,20 @@
+# Mentored students, newest first. `details` lines accept inline HTML.
+- date: Mar 2026–Present
+  title: Jenna Eggerding, Undergraduate student at Washington University in St. Louis
+  details:
+    - >-
+      Modeling strong lenses from JWST. Plan to present results at Fall 2026
+      WashU Undergraduate Research Symposium.
+  # TODO: update once the Fall 2026 symposium presentation has happened
+
+- date: May 2025–Present
+  title: Jodie Xiao, Undergraduate student at Washington University in St. Louis
+  details:
+    - >-
+      Participated in the
+      <a href="/research/lsst-cnn/">LSST Strong Lens Data Challenge</a>
+      in Fall 2025. Trained a convolutional neural network to classify strong
+      lenses, achieved score 98.1/100 placing 9th out of 21 teams. Presented
+      results at
+      <a href="https://physics.wustl.edu/news/physics-students-present-fall-2025-undergraduate-research-symposium" target="_blank" rel="noopener">Fall 2025 WashU Undergraduate Research Symposium</a>
+      and 2025 Washington University Physics Research Symposium.

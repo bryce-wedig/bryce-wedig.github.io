@@ -1,0 +1,38 @@
+---
+import type { CvEntry } from '@lib/data';
+
+interface Props {
+  items: CvEntry[];
+  /** Put the date above the title instead of in a left column (for narrow columns). */
+  stacked?: boolean;
+}
+
+const { items, stacked = false } = Astro.props;
+
+const external = (href: string) => /^https?:\/\//.test(href);
+---
+
+<div class:list={['cv-list', stacked && 'cv-list--stacked']}>
+  {
+    items.map((item) => (
+      <div class="cv-item">
+        <div class="cv-item__date">{item.date}</div>
+        <div class="cv-item__body">
+          {item.href ? (
+            <a
+              class="cv-item__title"
+              href={item.href}
+              {...(external(item.href) ? { target: '_blank', rel: 'noopener' } : {})}
+              set:html={item.title}
+            />
+          ) : (
+            <div class="cv-item__title" set:html={item.title} />
+          )}
+          {item.details.map((line) => (
+            <div class="cv-item__detail" set:html={line} />
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>
