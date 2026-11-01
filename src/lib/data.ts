@@ -3,10 +3,12 @@ import { z } from 'zod';
 import siteYaml from '../data/site.yml';
 import tagsYaml from '../data/tags.yml';
 import pressYaml from '../data/press.yml';
-import publicationsYaml from '../data/publications.yml';
 import teachingYaml from '../data/teaching.yml';
 import outreachYaml from '../data/outreach.yml';
 import githubJson from '../data/github.json';
+import papersBib from '../data/papers.bib?raw';
+
+import { parseBibtex, toPublications } from './bibtex';
 
 /**
  * YAML parsers turn bare `2026-04-22` into a Date, but the page prints the plain
@@ -62,16 +64,6 @@ const pressSchema = z.array(
   }),
 );
 
-const publicationsSchema = z.array(
-  z.object({
-    year: z.number(),
-    title: z.string(),
-    byline: z.string(),
-    position: z.string(),
-    href: z.string(),
-  }),
-);
-
 const teachingSchema = z.array(z.object({ year: z.number(), body: z.string() }));
 
 const outreachSchema = z.array(
@@ -113,11 +105,8 @@ export const press: z.infer<typeof pressSchema> = parse(
   'src/data/press.yml',
 );
 
-export const publications: z.infer<typeof publicationsSchema> = parse(
-  publicationsSchema,
-  publicationsYaml,
-  'src/data/publications.yml',
-);
+// Generated from the ADS export in papers.bib, newest first.
+export const publications = toPublications(parseBibtex(papersBib), 'Wedig');
 
 export const teaching: z.infer<typeof teachingSchema> = parse(
   teachingSchema,
