@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -29,24 +29,14 @@ jobs:
 
       - run: npm ci
 
+      # Fetched fresh on every build and used only in this run's working tree,
+      # so nothing is committed back. The checked-in copy is a fallback for
+      # local dev and for any repo whose fetch fails.
       - name: Refresh GitHub data
-        if: github.event_name != 'push'
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/fetch-github-data.mjs
-
-      - name: Commit refreshed data
-        if: github.event_name != 'push'
-        run: |
-          if git diff --quiet -- src/data/github.json; then
-            echo "No change."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/github.json
-          git commit -m "chore: refresh GitHub data"
-          git push
 
       - run: npm run build
 

@@ -3,8 +3,8 @@
  * Refreshes src/data/github.json with star counts and recent authored pull
  * requests for every repository referenced by the software collection.
  *
- * Run by .github/workflows/refresh-github-data.yml on a nightly schedule so the
- * site renders this data statically at build time — no GitHub API call happens
+ * Run by .github/workflows/deploy.yml before every build (push and nightly) so
+ * the site renders this data statically at build time — no GitHub API call happens
  * in a visitor's browser, which keeps the pages working offline, under rate
  * limits, and for every visitor.
  *
